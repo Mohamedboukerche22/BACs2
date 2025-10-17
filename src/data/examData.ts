@@ -1,0 +1,1923 @@
+export interface ExamSubject {
+  id: string;
+  subject: string;
+  branch?: string;   
+  year: number;
+  hasCorrection: boolean;
+  pdfUrl?: string;
+  correctionPdfUrl?: string;
+}
+
+
+// Sample data structure - you'll add actual PDF URLs later
+export const examData: ExamSubject[] = [
+  // 2024 - Mathematics Branch
+ // { id: "1", subject: "الرياضيات", branch: "رياضيات", year: 2024, hasCorrection: true },
+ // { id: "2", subject: "الفيزياء", branch: "رياضيات", year: 2024, hasCorrection: true },
+  
+  // 2024 - Sciences Branch
+  {
+    "id": "1",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2024,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2024AnCo.pdf"
+  },
+  {
+    "id": "2",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2024,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2024ArSu.pdf"
+  },
+  {
+    "id": "3",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2014,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2014FrCo.pdf"
+  },
+  {
+    "id": "4",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2019,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2019PlSu.pdf"
+  },
+  {
+    "id": "5",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2020,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2020PlCo.pdf"
+  },
+  {
+    "id": "6",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2022,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2022MtSu.pdf"
+  },
+  {
+    "id": "7",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2012,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2012AnSu.pdf"
+  },
+  {
+    "id": "8",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2022,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2022MtCo.pdf"
+  },
+  {
+    "id": "9",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2021,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2021PlCo.pdf"
+  },
+  {
+    "id": "10",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2014,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2014HgCo.pdf"
+  },
+  {
+    "id": "11",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2008,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2008MtSu.pdf"
+  },
+  {
+    "id": "12",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2015,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2015PySu.pdf"
+  },
+  {
+    "id": "13",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2023,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2023MtSu.pdf"
+  },
+  {
+    "id": "14",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2011,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2011AnSu.pdf"
+  },
+  {
+    "id": "15",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2024,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2024PlSu.pdf"
+  },
+  {
+    "id": "16",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2022,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2022HgSu.pdf"
+  },
+  {
+    "id": "17",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2010,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2010AnCo.pdf"
+  },
+  {
+    "id": "18",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2018,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2018FrCo.pdf"
+  },
+  {
+    "id": "19",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2017,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2017FrSu.pdf"
+  },
+  {
+    "id": "20",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2014,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2014AnCo.pdf"
+  },
+  {
+    "id": "21",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2018,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2018AnCo.pdf"
+  },
+  {
+    "id": "22",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2024,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2024FrCo.pdf"
+  },
+  {
+    "id": "23",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2018,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2018FrSu.pdf"
+  },
+  {
+    "id": "24",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2009,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2009PlSu.pdf"
+  },
+  {
+    "id": "25",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2017,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2017PySu.pdf"
+  },
+  {
+    "id": "26",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2012,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2012MtSu.pdf"
+  },
+  {
+    "id": "27",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2015,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2015PlCo.pdf"
+  },
+  {
+    "id": "28",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2020,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2020PyCo.pdf"
+  },
+  {
+    "id": "29",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2017,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2017MtCo.pdf"
+  },
+  {
+    "id": "30",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2012,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2012FrSu.pdf"
+  },
+  {
+    "id": "31",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2020,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2020PlSu.pdf"
+  },
+  {
+    "id": "32",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2023,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2023ArCo.pdf"
+  },
+  {
+    "id": "33",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2015,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2015MtSu.pdf"
+  },
+  {
+    "id": "34",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2014,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2014PySu.pdf"
+  },
+  {
+    "id": "35",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2009,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2009HgCo.pdf"
+  },
+  {
+    "id": "36",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2016,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2016MtSu.pdf"
+  },
+  {
+    "id": "37",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2024,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2024PyCo.pdf"
+  },
+  {
+    "id": "38",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2008,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2008PlCo.pdf"
+  },
+  {
+    "id": "39",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2021,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2021FrCo.pdf"
+  },
+  {
+    "id": "40",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2017,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2017PlSu.pdf"
+  },
+  {
+    "id": "41",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2024,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2024FrSu.pdf"
+  },
+  {
+    "id": "42",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2013,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2013PySu.pdf"
+  },
+  {
+    "id": "43",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2009,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2009ArCo.pdf"
+  },
+  {
+    "id": "44",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2009,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2009PySu.pdf"
+  },
+  {
+    "id": "45",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2021,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2021MtCo.pdf"
+  },
+  {
+    "id": "46",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2010,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2010MtSu.pdf"
+  },
+  {
+    "id": "47",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2022,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2022PySu.pdf"
+  },
+  {
+    "id": "48",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2008,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2008FrSu.pdf"
+  },
+  {
+    "id": "49",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2008,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2008ArSu.pdf"
+  },
+  {
+    "id": "50",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2024,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2024AnSu.pdf"
+  },
+  {
+    "id": "51",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2021,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2021HgSu.pdf"
+  },
+  {
+    "id": "52",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2014,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2014FrSu.pdf"
+  },
+  {
+    "id": "53",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2022,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2022PlSu.pdf"
+  },
+  {
+    "id": "54",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2019,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2019PyCo.pdf"
+  },
+  {
+    "id": "55",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2022,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2022AnSu.pdf"
+  },
+  {
+    "id": "56",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2011,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2011AnCo.pdf"
+  },
+  {
+    "id": "57",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2019,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2019AnSu.pdf"
+  },
+  {
+    "id": "58",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2023,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2023PySu.pdf"
+  },
+  {
+    "id": "59",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2023,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2023ArSu.pdf"
+  },
+  {
+    "id": "60",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2024,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2024PlCo.pdf"
+  },
+  {
+    "id": "61",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2010,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2010PyCo.pdf"
+  },
+  {
+    "id": "62",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2020,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2020FrSu.pdf"
+  },
+  {
+    "id": "63",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2019,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2019PlCo.pdf"
+  },
+  {
+    "id": "64",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2015,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2015MtCo.pdf"
+  },
+  {
+    "id": "65",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2020,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2020PySu.pdf"
+  },
+  {
+    "id": "66",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2018,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2018PySu.pdf"
+  },
+  {
+    "id": "67",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2017,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2017HgCo.pdf"
+  },
+  {
+    "id": "68",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2022,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2022HgCo.pdf"
+  },
+  {
+    "id": "69",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2017,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2017PlCo.pdf"
+  },
+  {
+    "id": "70",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2022,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2022PyCo.pdf"
+  },
+  {
+    "id": "71",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2020,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2020MtSu.pdf"
+  },
+  {
+    "id": "72",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2012,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2012MtCo.pdf"
+  },
+  {
+    "id": "73",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2023,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2023FrSu.pdf"
+  },
+  {
+    "id": "74",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2024,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2024HgSu.pdf"
+  },
+  {
+    "id": "75",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2020,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2020AnCo.pdf"
+  },
+  {
+    "id": "76",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2019,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2019AnCo.pdf"
+  },
+  {
+    "id": "77",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2018,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2018PyCo.pdf"
+  },
+  {
+    "id": "78",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2022,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2022FrSu.pdf"
+  },
+  {
+    "id": "79",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2010,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2010HgSu.pdf"
+  },
+  {
+    "id": "80",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2015,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2015HgSu.pdf"
+  },
+  {
+    "id": "81",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2011,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2011MtCo.pdf"
+  },
+  {
+    "id": "82",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2020,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2020MtCo.pdf"
+  },
+  {
+    "id": "83",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2008,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2008FrCo.pdf"
+  },
+  {
+    "id": "84",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2008,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2008MtCo.pdf"
+  },
+  {
+    "id": "85",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2022,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2022AnCo.pdf"
+  },
+  {
+    "id": "86",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2018,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2018PlSu.pdf"
+  },
+  {
+    "id": "87",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2017,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2017ArCo.pdf"
+  },
+  {
+    "id": "88",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2012,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2012PySu.pdf"
+  },
+  {
+    "id": "89",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2015,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2015AnCo.pdf"
+  },
+  {
+    "id": "90",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2016,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2016PlSu.pdf"
+  },
+  {
+    "id": "91",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2023,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2023HgSu.pdf"
+  },
+  {
+    "id": "92",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2021,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2021PyCo.pdf"
+  },
+  {
+    "id": "93",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2017,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2017HgSu.pdf"
+  },
+  {
+    "id": "94",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2018,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2018ArCo.pdf"
+  },
+  {
+    "id": "95",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2010,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2010PlCo.pdf"
+  },
+  {
+    "id": "96",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2014,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2014MtCo.pdf"
+  },
+  {
+    "id": "97",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2011,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2011ArCo.pdf"
+  },
+  {
+    "id": "98",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2010,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2010ArSu.pdf"
+  },
+  {
+    "id": "99",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2023,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2023AnSu.pdf"
+  },
+  {
+    "id": "100",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2015,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2015ArCo.pdf"
+  },
+  {
+    "id": "101",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2016,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2016FrCo.pdf"
+  },
+  {
+    "id": "102",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2008,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2008PlSu.pdf"
+  },
+  {
+    "id": "103",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2019,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2019ArCo.pdf"
+  },
+  {
+    "id": "104",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2016,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2016PyCo.pdf"
+  },
+  {
+    "id": "105",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2011,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2011MtSu.pdf"
+  },
+  {
+    "id": "106",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2014,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2014AnSu.pdf"
+  },
+  {
+    "id": "107",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2010,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2010PySu.pdf"
+  },
+  {
+    "id": "108",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2021,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2021MtSu.pdf"
+  },
+  {
+    "id": "109",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2019,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2019MtCo.pdf"
+  },
+  {
+    "id": "110",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2017,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2017ArSu.pdf"
+  },
+  {
+    "id": "111",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2020,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2020ArSu.pdf"
+  },
+  {
+    "id": "112",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2017,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2017FrCo.pdf"
+  },
+  {
+    "id": "113",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2012,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2012HgCo.pdf"
+  },
+  {
+    "id": "114",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2013,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2013AnSu.pdf"
+  },
+  {
+    "id": "115",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2011,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2011HgCo.pdf"
+  },
+  {
+    "id": "116",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2022,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2022ArSu.pdf"
+  },
+  {
+    "id": "117",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2016,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2016FrSu.pdf"
+  },
+  {
+    "id": "118",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2010,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2010ArCo.pdf"
+  },
+  {
+    "id": "119",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2010,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2010AnSu.pdf"
+  },
+  {
+    "id": "120",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2010,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2010PlSu.pdf"
+  },
+  {
+    "id": "121",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2016,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2016ArSu.pdf"
+  },
+  {
+    "id": "122",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2014,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2014MtSu.pdf"
+  },
+  {
+    "id": "123",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2012,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2012PlCo.pdf"
+  },
+  {
+    "id": "124",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2023,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2023PyCo.pdf"
+  },
+  {
+    "id": "125",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2016,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2016ArCo.pdf"
+  },
+  {
+    "id": "126",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2023,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2023HgCo.pdf"
+  },
+  {
+    "id": "127",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2011,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2011PyCo.pdf"
+  },
+  {
+    "id": "128",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2021,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2021ArSu.pdf"
+  },
+  {
+    "id": "129",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2018,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2018MtSu.pdf"
+  },
+  {
+    "id": "130",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2015,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2015ArSu.pdf"
+  },
+  {
+    "id": "131",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2012,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2012AnCo.pdf"
+  },
+  {
+    "id": "132",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2012,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2012FrCo.pdf"
+  },
+  {
+    "id": "133",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2011,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2011FrCo.pdf"
+  },
+  {
+    "id": "134",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2012,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2012ArCo.pdf"
+  },
+  {
+    "id": "135",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2009,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2009AnCo.pdf"
+  },
+  {
+    "id": "136",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2019,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2019FrCo.pdf"
+  },
+  {
+    "id": "137",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2021,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2021ArCo.pdf"
+  },
+  {
+    "id": "138",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2024,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2024MtCo.pdf"
+  },
+  {
+    "id": "139",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2015,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2015HgCo.pdf"
+  },
+  {
+    "id": "140",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2011,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2011FrSu.pdf"
+  },
+  {
+    "id": "141",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2013,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2013PlCo.pdf"
+  },
+  {
+    "id": "142",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2021,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2021PySu.pdf"
+  },
+  {
+    "id": "143",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2019,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2019HgSu.pdf"
+  },
+  {
+    "id": "144",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2023,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2023FrCo.pdf"
+  },
+  {
+    "id": "145",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2008,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2008AnCo.pdf"
+  },
+  {
+    "id": "146",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2008,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2008HgSu.pdf"
+  },
+  {
+    "id": "147",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2010,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2010MtCo.pdf"
+  },
+  {
+    "id": "148",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2024,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2024ArCo.pdf"
+  },
+  {
+    "id": "149",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2019,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2019HgCo.pdf"
+  },
+  {
+    "id": "150",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2013,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2013MtSu.pdf"
+  },
+  {
+    "id": "151",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2009,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2009FrCo.pdf"
+  },
+  {
+    "id": "152",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2011,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2011PySu.pdf"
+  },
+  {
+    "id": "153",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2009,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2009FrSu.pdf"
+  },
+  {
+    "id": "154",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2012,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2012PlSu.pdf"
+  },
+  {
+    "id": "155",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2008,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2008HgCo.pdf"
+  },
+  {
+    "id": "156",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2008,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2008ArCo.pdf"
+  },
+  {
+    "id": "157",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2016,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2016HgCo.pdf"
+  },
+  {
+    "id": "158",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2014,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2014ArSu.pdf"
+  },
+  {
+    "id": "159",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2022,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2022PlCo.pdf"
+  },
+  {
+    "id": "160",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2012,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2012HgSu.pdf"
+  },
+  {
+    "id": "161",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2013,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2013PlSu.pdf"
+  },
+  {
+    "id": "162",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2017,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2017AnCo.pdf"
+  },
+  {
+    "id": "163",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2013,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2013ArSu.pdf"
+  },
+  {
+    "id": "164",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2014,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2014HgSu.pdf"
+  },
+  {
+    "id": "165",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2020,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2020FrCo.pdf"
+  },
+  {
+    "id": "166",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2024,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2024PySu.pdf"
+  },
+  {
+    "id": "167",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2009,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2009MtSu.pdf"
+  },
+  {
+    "id": "168",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2009,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2009MtCo.pdf"
+  },
+  {
+    "id": "169",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2014,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2014PlCo.pdf"
+  },
+  {
+    "id": "170",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2013,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2013HgCo.pdf"
+  },
+  {
+    "id": "171",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2011,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2011HgSu.pdf"
+  },
+  {
+    "id": "172",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2009,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2009HgSu.pdf"
+  },
+  {
+    "id": "173",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2018,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2018HgCo.pdf"
+  },
+  {
+    "id": "174",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2021,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2021AnCo.pdf"
+  },
+  {
+    "id": "175",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2021,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2021AnSu.pdf"
+  },
+  {
+    "id": "176",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2013,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2013ArCo.pdf"
+  },
+  {
+    "id": "177",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2015,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2015PyCo.pdf"
+  },
+  {
+    "id": "178",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2017,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2017PyCo.pdf"
+  },
+  {
+    "id": "179",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2019,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2019PySu.pdf"
+  },
+  {
+    "id": "180",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2021,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2021HgCo.pdf"
+  },
+  {
+    "id": "181",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2013,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2013FrSu.pdf"
+  },
+  {
+    "id": "182",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2013,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2013AnCo.pdf"
+  },
+  {
+    "id": "183",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2009,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2009PyCo.pdf"
+  },
+  {
+    "id": "184",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2011,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2011PlSu.pdf"
+  },
+  {
+    "id": "185",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2016,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2016PySu.pdf"
+  },
+  {
+    "id": "186",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2010,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2010FrSu.pdf"
+  },
+  {
+    "id": "187",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2014,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2014ArCo.pdf"
+  },
+  {
+    "id": "188",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2024,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2024MtSu.pdf"
+  },
+  {
+    "id": "189",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2019,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2019ArSu.pdf"
+  },
+  {
+    "id": "190",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2021,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2021PlSu.pdf"
+  },
+  {
+    "id": "191",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2016,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2016AnCo.pdf"
+  },
+  {
+    "id": "192",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2010,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2010FrCo.pdf"
+  },
+  {
+    "id": "193",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2018,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2018MtCo.pdf"
+  },
+  {
+    "id": "194",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2012,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2012PyCo.pdf"
+  },
+  {
+    "id": "195",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2011,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2011PlCo.pdf"
+  },
+  {
+    "id": "196",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2019,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2019MtSu.pdf"
+  },
+  {
+    "id": "197",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2020,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2020HgCo.pdf"
+  },
+  {
+    "id": "198",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2021,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2021FrSu.pdf"
+  },
+  {
+    "id": "199",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2009,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2009ArSu.pdf"
+  },
+  {
+    "id": "200",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2024,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2024HgCo.pdf"
+  },
+  {
+    "id": "201",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2008,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2008AnSu.pdf"
+  },
+  {
+    "id": "202",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2009,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2009AnSu.pdf"
+  },
+  {
+    "id": "203",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2014,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2014PyCo.pdf"
+  },
+  {
+    "id": "204",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2023,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2023AnCo.pdf"
+  },
+  {
+    "id": "205",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2008,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2008PyCo.pdf"
+  },
+  {
+    "id": "206",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2022,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2022ArCo.pdf"
+  },
+  {
+    "id": "207",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2013,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2013PyCo.pdf"
+  },
+  {
+    "id": "208",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2015,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2015AnSu.pdf"
+  },
+  {
+    "id": "209",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2017,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2017AnSu.pdf"
+  },
+  {
+    "id": "210",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2017,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2017MtSu.pdf"
+  },
+  {
+    "id": "211",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2020,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2020ArCo.pdf"
+  },
+  {
+    "id": "212",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2016,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2016AnSu.pdf"
+  },
+  {
+    "id": "213",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2023,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2023PlCo.pdf"
+  },
+  {
+    "id": "214",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2023,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2023MtCo.pdf"
+  },
+  {
+    "id": "215",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2016,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2016MtCo.pdf"
+  },
+  {
+    "id": "216",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2010,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2010HgCo.pdf"
+  },
+  {
+    "id": "217",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2012,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2012ArSu.pdf"
+  },
+  {
+    "id": "218",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2018,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2018ArSu.pdf"
+  },
+  {
+    "id": "219",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2019,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2019FrSu.pdf"
+  },
+  {
+    "id": "220",
+    "branch": "علوم تجريبية",
+    "subject": "الفيزياء",
+    "year": 2008,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2008PySu.pdf"
+  },
+  {
+    "id": "221",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2018,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2018PlCo.pdf"
+  },
+  {
+    "id": "222",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2020,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2020AnSu.pdf"
+  },
+  {
+    "id": "223",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2015,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2015PlSu.pdf"
+  },
+  {
+    "id": "224",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2014,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2014PlSu.pdf"
+  },
+  {
+    "id": "225",
+    "branch": "علوم تجريبية",
+    "subject": "الإنجليزية",
+    "year": 2018,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2018AnSu.pdf"
+  },
+  {
+    "id": "226",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2022,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2022FrCo.pdf"
+  },
+  {
+    "id": "227",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2018,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2018HgSu.pdf"
+  },
+  {
+    "id": "228",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2020,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2020HgSu.pdf"
+  },
+  {
+    "id": "229",
+    "branch": "علوم تجريبية",
+    "subject": "الرياضيات",
+    "year": 2013,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2013MtCo.pdf"
+  },
+  {
+    "id": "230",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2015,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2015FrSu.pdf"
+  },
+  {
+    "id": "231",
+    "branch": "علوم تجريبية",
+    "subject": "العربية",
+    "year": 2011,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2011ArSu.pdf"
+  },
+  {
+    "id": "232",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2016,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2016HgSu.pdf"
+  },
+  {
+    "id": "233",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2016,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2016PlCo.pdf"
+  },
+  {
+    "id": "234",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2013,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2013FrCo.pdf"
+  },
+  {
+    "id": "235",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2009,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2009PlCo.pdf"
+  },
+  {
+    "id": "236",
+    "branch": "علوم تجريبية",
+    "subject": "العلوم الطبيعية",
+    "year": 2023,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2023PlSu.pdf"
+  },
+  {
+    "id": "237",
+    "branch": "علوم تجريبية",
+    "subject": "الفرنسية",
+    "year": 2015,
+    "hasCorrection": true,
+    "pdfUrl": "/pdfs/Sc2015FrCo.pdf"
+  },
+  {
+    "id": "238",
+    "branch": "علوم تجريبية",
+    "subject": "التاريخ والجغرافيا",
+    "year": 2013,
+    "hasCorrection": false,
+    "pdfUrl": "/pdfs/Sc2013HgSu.pdf"
+  }
+];
